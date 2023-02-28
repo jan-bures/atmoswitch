@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>11</LangVersion>
+    <ImplicitUsings>true</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="..\external_dlls\SpaceWarp.dll" />
+    <Reference Include="..\external_dlls\UnityEngine.dll" />
+    <Reference Include="..\external_dlls\UnityEngine.CoreModule.dll" />
+    <Reference Include="..\external_dlls\Assembly-CSharp.dll" />
+    <Reference Include="..\external_dlls\NewtonSoft.Json.dll" />
+    <Reference Include="..\external_dlls\NewtonSoft.Json.dll" />
+    <Reference Include="0Harmony">
+      <HintPath>..\..\SpaceWarp\packages\HarmonyX.2.10.1\lib\netstandard2.0\0Harmony.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\atmoswitch\bin\&quot;&#xA;xcopy /y &quot;$(ProjectDir)..\LICENSE&quot; &quot;$(ProjectDir)..\atmoswitch\&quot;&#xA;echo f | xcopy /y &quot;$(ProjectDir)..\README.md&quot; &quot;$(ProjectDir)..\atmoswitch\README.txt&quot;" />
+  </Target>
+</Project>
