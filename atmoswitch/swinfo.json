@@ -4,7 +4,7 @@
     "name": "AtmoSwitch",
     "description": "Allows vessel switching in atmosphere.",
     "source": "https://github.com/jan-bures/atmoswitch",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "dependencies": [],
     "ksp2_version": {
         "min": "0.1.0",

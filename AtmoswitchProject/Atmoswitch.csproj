@@ -13,11 +13,15 @@
     <Reference Include="..\external_dlls\Assembly-CSharp.dll" />
     <Reference Include="..\external_dlls\NewtonSoft.Json.dll" />
     <Reference Include="..\external_dlls\NewtonSoft.Json.dll" />
-    <Reference Include="0Harmony">
-      <HintPath>..\..\SpaceWarp\packages\HarmonyX.2.10.1\lib\netstandard2.0\0Harmony.dll</HintPath>
+    <Reference Include="SpaceWarp">
+      <HintPath>..\external_dlls\SpaceWarp.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BepInEx.BaseLib" Version="5.4.21" />
+    <PackageReference Include="HarmonyX" Version="2.10.1" />
+  </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\atmoswitch\bin\&quot;&#xA;xcopy /y &quot;$(ProjectDir)..\LICENSE&quot; &quot;$(ProjectDir)..\atmoswitch\&quot;&#xA;echo f | xcopy /y &quot;$(ProjectDir)..\README.md&quot; &quot;$(ProjectDir)..\atmoswitch\README.txt&quot;" />
+    <Exec Command="xcopy /y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\atmoswitch\&quot;&#xA;xcopy /y &quot;$(ProjectDir)..\LICENSE&quot; &quot;$(ProjectDir)..\atmoswitch\&quot;&#xA;echo f | xcopy /y &quot;$(ProjectDir)..\README.md&quot; &quot;$(ProjectDir)..\atmoswitch\README.txt&quot;" />
   </Target>
 </Project>

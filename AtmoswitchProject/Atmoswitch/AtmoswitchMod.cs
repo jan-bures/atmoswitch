@@ -1,17 +1,26 @@
-using SpaceWarp.API.Logging;
+using BepInEx;
+using BepInEx.Logging;
+using HarmonyLib;
+using SpaceWarp;
 using SpaceWarp.API.Mods;
 
 namespace Atmoswitch
 {
-    [MainMod]
-    public class AtmoswitchMod : Mod
+    [BepInPlugin(ModGuid, ModName, ModVer)]
+    [BepInDependency(SpaceWarpPlugin.ModGuid, SpaceWarpPlugin.ModVer)]
+    public class AtmoswitchMod: BaseSpaceWarpPlugin
     {
-        public static BaseModLogger sLogger;
+        public const string ModGuid = "com.munix.atmoswitch";
+        public const string ModName = "AtmoSwitch";
+        public const string ModVer = "0.3.0";
+
+        internal new static ManualLogSource Logger;
 
         public override void OnInitialized()
         {
-            sLogger = Logger;
-            Logger.Info("Atmoswitch is initialized");
+            Logger = base.Logger;
+            Logger.LogInfo("Atmoswitch is initialized");
+            Harmony.CreateAndPatchAll(typeof(AtmoswitchMod).Assembly, ModGuid);
         }
     }
 }

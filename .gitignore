@@ -18,3 +18,4 @@ AtmoswitchProject/[Bb]in/
 AtmoswitchProject/[Oo]bj/
 AtmoswitchProject/[Ll]og/
 AtmoswitchProject/[Ll]ogs/
+*.dll
