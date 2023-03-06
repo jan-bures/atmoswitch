@@ -1,7 +1,5 @@
 ﻿using KSP.Sim.impl;
 using HarmonyLib;
-using KSP.Dev;
-using KSP.Sim.Definitions;
 
 namespace Atmoswitch;
 
